@@ -1,22 +1,29 @@
-# DA401 Capstone Project - [Your Name]
+# DA401 Capstone Project - Gus Nelson
 
 ## Project Title
-(Write a clear, descriptive title for your project.)
+How Solar Energy changed the Energy Business
 
 ## Research Question
-What question are you trying to answer?
+How has the growth of Solar Energy changed the energy industry over the past decade specifically, which parts of the industry have grown, and which have shrunk as solar has taken up a bigger share of the power grid?
 
 ## Data Source
-Where is your data coming from? 
+U.S. Energy Information Administration, U.S. Department of Energy, U.S. Bureau of Labor Statistics
 
 ## Methods
-Which methods or models will you use? 
+- Using newer data
+- Answering a practical question for a particular community or organization
+Comparing EIA generation data to DOE and BLS employment data over the past decade to see whether Solar's growth in electricity generation matches its growth in jobs, and identify which energy sectors grew or shrank as solar expanded.
 
 ## Expected Timeline
-What do you expect to produce every week?
+Week 1: Finalize research question and pull data from EIA, DOE, and BLS
+Week 2-3: Clean and organize the data pulled
+Week 4: Analyze Solar's generation growth vs. its employment growth; compare against each other
+Week 5-6: Identify and write up findings — where solar is leading vs. lagging, whether generation is leading vs. jobs
+Week 6: Draft full report/presentation
+Week 7: Revise and finalize report
 
 ## Google Drive 
-[Google Drive link if you have any]
+https://drive.google.com/drive/folders/1P5T_nhLKAnS6GhX-vkfgK9L4vTIZaTGX?usp=drive_link
 
 ## Repository Structure
 - `code/`: All analysis scripts or notebooks
