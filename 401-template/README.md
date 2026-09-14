@@ -18,7 +18,7 @@ Comparing EIA generation data to DOE and BLS employment data over the past decad
 Week 1: Finalize research question and pull data from EIA, DOE, and BLS
 Week 2-3: Clean and organize the data pulled
 Week 4: Analyze Solar's generation growth vs. its employment growth; compare against each other
-Week 5-6: Identify and write up findings — where solar is leading vs. lagging, whether generation is leading vs. jobs
+Week 5-6: Identify and write up findings; where solar is leading vs. lagging, whether generation is leading vs. jobs
 Week 6: Draft full report/presentation
 Week 7: Revise and finalize report
 
