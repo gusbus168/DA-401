@@ -4,7 +4,7 @@
 How Solar Energy changed the Energy Business
 
 ## Research Question
-How has the growth of Solar Energy changed the energy industry over the past decade specifically, which parts of the industry have grown, and which have shrunk as solar has taken up a bigger share of the power grid?
+Which parts of the industry have grown, and which have shrunk as solar has taken up a bigger share of the power grid?
 
 ## Data Source
 U.S. Energy Information Administration, U.S. Department of Energy, U.S. Bureau of Labor Statistics
