@@ -13,6 +13,11 @@ U.S. Energy Information Administration, U.S. Department of Energy, U.S. Bureau o
 - Using newer data
 - Answering a practical question for a particular community or organization
 Comparing EIA generation data to DOE and BLS employment data over the past decade to see whether Solar's growth in electricity generation matches its growth in jobs, and identify which energy sectors grew or shrank as solar expanded.
+- descriptive trend
+- Time series method
+- Meta-analyses
+- Input-output modeling
+- survey-based census methods
 
 ## Expected Timeline
 Week 1: Finalize research question and pull data from EIA, DOE, and BLS
