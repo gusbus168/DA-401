@@ -7,6 +7,8 @@ U.S. Bureau of Labor Statistics. (2026a). Solar electric power generation employ
 
 U.S. Bureau of Labor Statistics. (2026b). Solar photovoltaic installers. Occupational Outlook Handbook. https://www.bls.gov/ooh/construction-and-extraction/solar-photovoltaic-installers.htm
 
+U.S. Bureau of Labor Statistics. (2026c). Plug into employment trends in electric power generation, 2000–25. Monthly Labor Review. https://www.bls.gov/opub/mlr/2026/article/plug-into-employment-trends-in-electric-power-generation.htm
+
 U.S. Department of Energy. (2025). 2025 U.S. energy and employment report (USEER). Office of Energy Jobs. https://www.energy.gov/documents/2025-useer-national-report
 
 U.S. Department of Energy. (2026). 2026 U.S. energy and employment report (USEER). Office of Energy Jobs. https://www.energy.gov/documents/2026-useer-national-report
