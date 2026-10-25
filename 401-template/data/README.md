@@ -27,12 +27,3 @@ U.S. Energy Information Administration. (2026c). Electricity generation, capacit
 
 U.S. Energy Information Administration. (2026d). Electricity in the U.S. Energy Explained. https://www.eia.gov/energyexplained/electricity/electricity-in-the-us.php
 Basmadjian, R., Shaafieyoun, A., & Julka, S. (2021). Day-ahead forecasting of the percentage of renewables based on time-series statistical methods. Energies, 14(21), 7443. https://doi.org/10.3390/en14217443
-
-Faxholm, F. S., & Liew, S. K. M. (2019). They took our jobs! The energy transition and its employment consequences [Master's thesis, Copenhagen Business School]. CBS Research Portal.
-Interstate Renewable Energy Council. (2025). Census solar job trends: National solar jobs census 2025. https://irecusa.org/census-solar-job-trends/
-
-National Renewable Energy Laboratory. (n.d.). JEDI methodology. U.S. Department of Energy. https://www.nrel.gov/analysis/jedi/methodology
-
-Ohio Manufacturers' Association. (2019). Coal production employment drops 42% since 2011. https://www.ohiomfg.com/our-communities/coal-production-employment-drops-42-since-2011
-
-Stavropoulos, S., & Burger, M. J. (2019). Modelling strategy and net employment effects of renewable energy and energy efficiency: A meta-regression (Tinbergen Institute Discussion Paper No. 19-044/VII). Tinbergen Institute.
