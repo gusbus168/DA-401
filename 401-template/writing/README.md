@@ -1,9 +1,9 @@
 # Writing Folder
 
-This folder contains writing files for your project.
-
 How Solar Power Changed the Energy Business: Literature Review
+
 Introduction
+
 Solar power has moved from a marginal source of U.S. electricity to one of the fastest-growing segments of the energy sector, and the workforce tied to Solar has grown alongside it. Government reports capture these two sides through agencies such as the U.S. Energy Information Administration (EIA), which documents how much electricity solar generates, while the U.S. Department of Energy (DOE) and the U.S. Bureau of Labor Statistics (BLS) document how many people work in the industry that produces it. What is missing from these sources is a direct comparison of two questions. This review looks at how the energy industry changed over the past decade as Solar has taken up a bigger share of the power grid and which parts of the industry have grown and shrunk? Second, has Solar's growth in generation kept up with its growth in jobs, or is one outpacing the other? This review summarizes the source data on Solar generation and solar employment and determines how the energy industry has changed as Solar has grown, and whether Solar's generation growth has matched its employment growth.
 Makeup
 
