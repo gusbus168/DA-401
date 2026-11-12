@@ -3,6 +3,7 @@
 This folder contains code files for your project.
 
 FIGURE 1
+
 f13_fig1, f13_ax1 = plt.subplots(figsize=(10, 6))
 
 for f13_source in f13_share_df.columns:
@@ -28,6 +29,7 @@ plt.show()
 
 
 FIGURE 2
+
 fig, ax = plt.subplots(figsize=(9, 5))
 
 ax.plot(
@@ -56,6 +58,7 @@ plt.show()
 
 
 FIGURE 3
+
 f13_fossil_share = f13_share_df["Coal"] + f13_share_df["Natural Gas"]
 f13_nonfossil_share = f13_share_df["Nuclear"] + f13_share_df["Solar"] + f13_share_df["Wind"]
 
