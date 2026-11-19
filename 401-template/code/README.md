@@ -59,81 +59,29 @@ plt.show()
 
 FIGURE 3
 
-f13_fossil_share = f13_share_df["Coal"] + f13_share_df["Natural Gas"]
-f13_nonfossil_share = f13_share_df["Nuclear"] + f13_share_df["Solar"] + f13_share_df["Wind"]
+p3_fig, p3_ax = plt.subplots(figsize=(9, 6))
+p3_ax.scatter(p3_gen_f, p3_emp_f, label="Fossil", marker="o", color="#A64B2A")
+p3_ax.scatter(p3_gen_n, p3_emp_n, label="Non-fossil", marker="^", color="#2E6F40")
 
-f13_gen_shares = pd.DataFrame({
-    "Year": [int(y) for y in f13_years],
-    "Fossil_Generation_Share": f13_fossil_share.values,
-    "NonFossil_Generation_Share": f13_nonfossil_share.values,
-})
+p3_s, p3_i = np.polyfit(p3_gen_all, p3_emp_all, 1)
+p3_ax.plot(p3_x, p3_i + p3_s * p3_x, "--", color="gray", linewidth=2,
+           label=f"Pooled trend (r = {f13_r_pooled:.2f})")
+p3_sf, p3_if = np.polyfit(p3_gen_f, p3_emp_f, 1)
+p3_ax.plot(p3_x, p3_if + p3_sf * p3_x, ":", color="#A64B2A", linewidth=2,
+           label=f"Fossil trend (r = {f13_r_fossil:.2f})")
+p3_sn, p3_in = np.polyfit(p3_gen_n, p3_emp_n, 1)
+p3_ax.plot(p3_x, p3_in + p3_sn * p3_x, ":", color="#2E6F40", linewidth=2,
+           label=f"Non-fossil trend (r = {f13_r_nonfossil:.2f})")
 
-f13_merged = f13_gen_shares.merge(
-    employment_df[["Year", "Fossil_Employment", "NonFossil_Employment"]], on="Year"
-).sort_values("Year")
-
-f13_merged["Fossil_Gen_Change"] = f13_merged["Fossil_Generation_Share"].diff()
-f13_merged["NonFossil_Gen_Change"] = f13_merged["NonFossil_Generation_Share"].diff()
-f13_merged["Fossil_Emp_Change"] = f13_merged["Fossil_Employment"].pct_change() * 100
-f13_merged["NonFossil_Emp_Change"] = f13_merged["NonFossil_Employment"].pct_change() * 100
-
-f13_df = f13_merged[f13_merged["Year"].between(2016, 2025)].copy()
-
-f13_r_fossil, f13_p_fossil = stats.pearsonr(f13_df["Fossil_Gen_Change"], f13_df["Fossil_Emp_Change"])
-f13_r_nonfossil, f13_p_nonfossil = stats.pearsonr(f13_df["NonFossil_Gen_Change"], f13_df["NonFossil_Emp_Change"])
-f13_pooled_gen = pd.concat([f13_df["Fossil_Gen_Change"], f13_df["NonFossil_Gen_Change"]])
-f13_pooled_emp = pd.concat([f13_df["Fossil_Emp_Change"], f13_df["NonFossil_Emp_Change"]])
-f13_r_pooled, f13_p_pooled = stats.pearsonr(f13_pooled_gen, f13_pooled_emp)
-
-print(f"Fossil-only r={f13_r_fossil:.3f}, p={f13_p_fossil:.3f}")
-print(f"Non-fossil-only r={f13_r_nonfossil:.3f}, p={f13_p_nonfossil:.3f}")
-print(f"Pooled r={f13_r_pooled:.3f}, p={f13_p_pooled:.3f}")
-
-f13_long = pd.DataFrame({
-    "dGen": list(f13_df["Fossil_Gen_Change"]) + list(f13_df["NonFossil_Gen_Change"]),
-    "dEmp": list(f13_df["Fossil_Emp_Change"]) + list(f13_df["NonFossil_Emp_Change"]),
-    "NonFossil": [0]*len(f13_df) + [1]*len(f13_df)
-})
-f13_X = sm.add_constant(f13_long[["dGen", "NonFossil"]])
-f13_model = sm.OLS(f13_long["dEmp"], f13_X).fit()
-print(f13_model.summary())
-
-f13_b0 = f13_model.params["const"]
-f13_b1 = f13_model.params["dGen"]
-f13_b2 = f13_model.params["NonFossil"]
-f13_p1 = f13_model.pvalues["dGen"]
-
-f13_fig3, f13_ax3 = plt.subplots(figsize=(9, 6))
-f13_ax3.scatter(f13_df["Fossil_Gen_Change"], f13_df["Fossil_Emp_Change"], label="Fossil", marker="o", color="#A64B2A")
-f13_ax3.scatter(f13_df["NonFossil_Gen_Change"], f13_df["NonFossil_Emp_Change"], label="Non-fossil", marker="^", color="#2E6F40")
-
-f13_xline = np.linspace(f13_pooled_gen.min()-0.3, f13_pooled_gen.max()+0.3, 50)
-f13_ax3.plot(f13_xline, f13_b0 + f13_b1*f13_xline, "-", color="#A64B2A", linewidth=2, label="Fossil fitted (fixed effects)")
-f13_ax3.plot(f13_xline, (f13_b0+f13_b2) + f13_b1*f13_xline, "-", color="#2E6F40", linewidth=2, label="Non-fossil fitted (fixed effects)")
-
-f13_ax3.axhline(0, linestyle="--", linewidth=0.8)
-f13_ax3.axvline(0, linestyle="--", linewidth=0.8)
-f13_ax3.set_title("Year-over-Year Generation Change vs. Employment Change, 2016\u20132025")
-f13_ax3.set_xlabel("Change in Generation Share (percentage points)")
-f13_ax3.set_ylabel("Employment % Change (year-over-year)")
-f13_ax3.legend(fontsize=8)
-f13_ax3.grid(True, alpha=0.3)
-f13_ax3.text(0.98, 0.03,
-    f"Pooled Pearson r = {f13_r_pooled:.2f}, p = {f13_p_pooled:.2f}\n"
-    f"Fixed-effects \u03b21 (within-group slope) = {f13_b1:.2f}, p = {f13_p1:.2f}",
-    transform=f13_ax3.transAxes, fontsize=8.5, ha="right", va="bottom",
-    bbox=dict(boxstyle="round", facecolor="#f5f5f0", edgecolor="gray"))
-f13_fig3.tight_layout()
+p3_ax.axhline(0, linestyle="--", linewidth=0.8)
+p3_ax.axvline(0, linestyle="--", linewidth=0.8)
+p3_ax.set_title("Year-over-Year Generation Change vs. Employment Change, 2016\u20132025, Figure 3")
+p3_ax.set_xlabel("Change in Generation Share (percentage points)")
+p3_ax.set_ylabel("Employment % Change (year-over-year)")
+p3_ax.legend(fontsize=8)
+p3_ax.grid(True, alpha=0.3)
+p3_fig.tight_layout()
 plt.show()
-
-
-
-
-
-
-
-
-
 
 
 
